@@ -1,0 +1,25 @@
+<ion-header>
+  <ion-toolbar>
+    <ion-title>Login</ion-title>
+  </ion-toolbar>
+</ion-header>
+<ion-content padding>
+  <form #f="ngForm" (ngSubmit)="login(f)">
+      <ion-row justify-content-center>
+        <div *ngIf="showError">Error! Please try again</div>
+      </ion-row>
+      <ion-list>
+          <ion-item>
+            <ion-label position="floating">Username</ion-label>
+             <ion-input name="email" type="email" placeholder="your@email.com" autocomplete="off" ngModel required></ion-input>
+          </ion-item>
+          <ion-item>
+            <ion-label position="floating">Password</ion-label>
+             <ion-input name="password" type="password" placeholder="Password" ngModel required></ion-input>
+          </ion-item>
+         </ion-list>                  
+            <ion-button fill="solid" size="small" color ="dark" type="submit" [disabled]="f.invalid" expand="block">Login</ion-button>
+  </form>
+</ion-content>
+<ion-row>
+  <ion-col>
